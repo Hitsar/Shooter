@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun : BulletPull
 {
     [SerializeField] GameObject _bullet;
     [SerializeField] Transform _spawnPoint;
 
+    private void Start()
+    {
+        Initialized(_bullet);
+    }
     private void Update()
     {
         Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -13,7 +17,12 @@ public class Gun : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(_bullet, _spawnPoint.position, _spawnPoint.rotation);
+            if (TryGetObject(out GameObject bullet))
+            {
+                bullet.transform.position = _spawnPoint.position;
+                bullet.transform.rotation = _spawnPoint.rotation;
+                bullet.SetActive(true);
+            }
         }
     }
 }

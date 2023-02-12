@@ -19,7 +19,7 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Bullet bullet))
         {
-            Destroy(bullet.gameObject);
+            bullet.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
     }

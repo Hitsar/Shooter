@@ -6,7 +6,7 @@ public class Bar : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Bullet bullet))
         {
-            Destroy(bullet.gameObject);
+            bullet.gameObject.SetActive(false);
         }
         if (collision.gameObject.TryGetComponent(out EnemyMove enemy))
         {

@@ -1351,6 +1351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe57a19826ffd14eb569a58779872c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _container: {fileID: 1424047920}
+  _capacity: 20
   _bullet: {fileID: 108104915758493421, guid: 3bdd8e7abf9bf9a4caa35fcb3197fe3d, type: 3}
   _spawnPoint: {fileID: 30816007}
 --- !u!212 &1774186142
